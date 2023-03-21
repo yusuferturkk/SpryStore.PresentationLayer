@@ -1,0 +1,35 @@
+﻿@model List<SpryStore.EntityLayer.Concrete.Customer>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Şehir</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CustomerId</td>
+                <td>@item.CustomerName</td>
+                <td>@item.CustomerSurname</td>
+                <td>@item.CustomerCity</td>
+                <td><a href="/Default/DeleteCustomer/@item.CustomerId" class="btn btn-outline-danger">Sil</a></td>
+                <td><a href="/Default/UpdateCustomer/@item.CustomerId" class="btn btn-outline-success">Güncelle</a></td>
+            </tr>
+        }
+        
+    </table>
+    <a href="/Default/AddCustomer/" class="btn btn-outline-success">Müşteri Ekle</a>
+</div>

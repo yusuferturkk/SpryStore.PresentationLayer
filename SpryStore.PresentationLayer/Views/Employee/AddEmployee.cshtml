@@ -1,0 +1,43 @@
+﻿@model Employee
+
+@{
+    ViewData["Title"] = "AddEmployee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Personel Ekleme Ekranı</h2>
+<br />
+
+<form method="post" class="form-group">
+    @Html.HiddenFor(x => x.EmployeeId)
+
+    <label>Personel Adı</label>
+    <input type="text" asp-for="EmployeeName" class="form-control" />
+    <br />
+
+    <label>Personel Soyadı</label>
+    <input type="text" asp-for="EmployeeSurname" class="form-control" />
+    <br />
+
+    <label>Personel Mail</label>
+    <input type="text" asp-for="EmployeeEmail" class="form-control" />
+    <br />
+
+    <label>Telefon</label>
+    <input type="text" asp-for="EmployeePhone" class="form-control" />
+    <br />
+
+    <label>Şehir</label>
+    <input type="text" asp-for="EmployeeCity" class="form-control" />
+    <br />
+
+    <label>Resim</label>
+    <input type="text" asp-for="EmployeeImage" class="form-control" />
+    <br />
+
+    <label>Açıklama</label>
+    <input type="text" asp-for="EmployeeDescription" class="form-control" />
+    <br />
+
+    <button class="btn btn-outline-primary">Personel Ekle</button>
+</form>
