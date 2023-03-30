@@ -1,0 +1,27 @@
+﻿@model Contact
+
+@{
+    ViewData["Title"] = "UpdateContact";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h4>Gelen Mesaj Detaylar</h4>
+<form class="form-group">
+    @Html.Label("Ad Soyad")
+    @Html.TextBoxFor(x => x.NameSurname, new {@class = "form-control"})
+    <br />
+
+    @Html.Label("Mail Adresi")
+    @Html.TextBoxFor(x => x.EMail, new {@class = "form-control"})
+    <br />
+
+    @Html.Label("Konu")
+    @Html.TextBoxFor(x => x.Subject, new {@class = "form-control"})
+    <br />
+
+    @Html.Label("Mesaj")
+    @Html.TextBoxFor(x => x.MessageContent, new {@class = "form-control"})
+    <br />
+
+    <a href="/Contact/Index/" class="btn btn-outline-primary">Geri Dön</a>
+</form>

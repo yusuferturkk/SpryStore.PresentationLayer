@@ -24,7 +24,7 @@ namespace SpryStore.PresentationLayer.Controllers
 
         public IActionResult Index()
         {
-            var values = _productService.GetList();
+            var values = _productService.GetProductListWithCategory();
             return View(values);
         }
 
@@ -58,6 +58,14 @@ namespace SpryStore.PresentationLayer.Controllers
         [HttpGet]
         public IActionResult UpdateProduct(int id)
         {
+            List<SelectListItem> categories = (from x in _categoryService.GetList().ToList()
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.CategoryName,
+                                                   Value = x.CategoryId.ToString()
+                                               }).ToList();
+            ViewBag.value = categories;
+
             var value = _productService.GetById(id);
             return View(value);
         }

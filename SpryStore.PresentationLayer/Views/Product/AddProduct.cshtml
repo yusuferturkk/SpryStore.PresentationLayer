@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "AddProduct";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
 <h2>Ürün Ekleme Ekranı</h2>
@@ -28,7 +28,7 @@
     <br />
 
     <label>Açıklama</label>
-    <input type="text" asp-for="Description" class="form-control" />
+    <textarea asp-for="Description" rows="5" class="form-control"></textarea>
     <br />
 
     <button class="btn btn-outline-primary">Ürün Ekle</button>
