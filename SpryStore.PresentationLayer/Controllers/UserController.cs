@@ -63,7 +63,7 @@ namespace SpryStore.PresentationLayer.Controllers
                 }
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index"); 
         }
     }
 }

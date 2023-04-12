@@ -49,5 +49,10 @@ namespace SpryStore.BusinessLayer.Concrete
         {
             return _productDal.GetProductListWithCategory();
         }
+
+        public List<Product> GetLast4Product()
+        {
+            return _productDal.GetLast4Product();
+        }
     }
 }

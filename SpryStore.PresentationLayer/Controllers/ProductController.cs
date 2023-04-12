@@ -76,5 +76,11 @@ namespace SpryStore.PresentationLayer.Controllers
             _productService.Update(product);
             return RedirectToAction("Index");
         }
+
+        public IActionResult GetLast4Products()
+        {
+            var values = _productService.GetLast4Product();
+            return View(values);
+        }
     }
 }
